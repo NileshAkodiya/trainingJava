@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.yash.storemanagementsystem.exception.NoProductDescriptionGivenException;
+import com.yash.storemanagementsystem.exception.NoProductNameGivenException;
 import com.yash.storemanagementsystem.model.ProductQuality;
 /*
  * unit tests for ProductQualityDAOImpl are there in this class for each method.
@@ -22,7 +24,7 @@ public class ProductQualityDAOImplTest {
 	 * test for save method with corect product quality object
 	 */
 	@Test
-	public void test_save_GivenProductQualityObject_ShouldReturnProductQualityObject() {
+	public void test_save_GivenProductQualityObject_ShouldReturnProductQualityObject() throws NoProductNameGivenException, NoProductDescriptionGivenException {
 		productQuality=new ProductQuality();
 		productQuality.setId(0);
 		productQuality.setName("abcd");

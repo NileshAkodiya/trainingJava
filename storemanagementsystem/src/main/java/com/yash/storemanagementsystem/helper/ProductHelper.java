@@ -24,23 +24,26 @@ public class ProductHelper {
 	 *  this method case1()is here to get service of adding product in db.
 	 */
 	public void case1() throws NoProductNameGivenException, NoProductDescriptionGivenException, NoPriceGivenException {
-		System.out.println("enter the productCustomerId");
-		int id=sc.nextInt();
-		product.setProductCustomerId(id);
-		System.out.println("enter the name");
-		String name=sc.next();
-		product.setName(name);
-		sc.nextLine();
-		System.out.println("enter the price");
-		int price=sc.nextInt();
-		product.setPrice(price);
-		System.out.println("enter the description");
-		sc.nextLine();
-		String description=sc.nextLine();
-		product.setDescription(description);
-		product=productServiceImpl.addProduct(product);
-		System.out.println(product);
-
+		try {
+			System.out.println("enter the productCustomerId");
+			int id=sc.nextInt();
+			product.setProductCustomerId(id);
+			System.out.println("enter the name");
+			String name=sc.next();
+			product.setName(name);
+			sc.nextLine();
+			System.out.println("enter the price");
+			double price=sc.nextDouble();
+			product.setPrice(price);
+			System.out.println("enter the description");
+			sc.nextLine();
+			String description=sc.nextLine();
+			product.setDescription(description);
+			product=productServiceImpl.addProduct(product);
+			System.out.println(product);
+		}catch(Exception e) {
+			System.out.println("Invalid Input.");
+		}
 	}
 	/*
 	 *  this method case2()is here to get service of seeing all products available in db.
@@ -55,10 +58,14 @@ public class ProductHelper {
 	 *  this method case3()is here to get service of seeing a product by its Id from db.
 	 */
 	public void case3() {
-		System.out.println("Enter the id of product u want to see");
-		list = productServiceImpl.getProductById(sc.nextInt());
-		for(Product productTemp:list) {
-			System.out.println(productTemp);
+		try {
+			System.out.println("Enter the id of product u want to see");
+			list = productServiceImpl.getProductById(sc.nextInt());
+			for(Product productTemp:list) {
+				System.out.println(productTemp);
+			}
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
 		}
 
 	}
@@ -66,20 +73,28 @@ public class ProductHelper {
 	 *  this method case4()is here to get service of updating product's price in db.
 	 */
 	public void case4() throws NoPriceGivenException {
-		System.out.println("Enter the id and new price");
-		product=productServiceImpl.updateProductPrice(sc.nextInt(), sc.nextInt());
-		System.out.println(product);
+		try {
+			System.out.println("Enter the id and new price");
+			product=productServiceImpl.updateProductPrice(sc.nextInt(), sc.nextDouble());
+			System.out.println(product);
+		} catch (NoPriceGivenException e) {
+			System.out.println("Invalid input entered!!!");
+		}
 	}
 	/*
 	 *  this method case5()is here to get service of updating product's description in db.
 	 */
 	public void case5() {
-		System.out.println("Enter the id and new description");
-		int id=sc.nextInt();
-		sc.nextLine();
-		String desc=sc.nextLine();
-		product=productServiceImpl.updateProductDescription(id,desc);
-		System.out.println(product);
+		try {
+			System.out.println("Enter the id and new description");
+			int id=sc.nextInt();
+			sc.nextLine();
+			String desc=sc.nextLine();
+			product=productServiceImpl.updateProductDescription(id,desc);
+			System.out.println(product);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
+		}
 
 	}
 	/*
@@ -93,11 +108,15 @@ public class ProductHelper {
 	 *  this method case7()is here to get service of deleting a product by its Id from db.
 	 */
 	public void case7() {
-		System.out.println("Enter the id to delete the project");
-		int id=sc.nextInt();
-		product=productServiceImpl.deleteProductById(id);
-		System.out.println(product);
-		
+		try {
+			System.out.println("Enter the id to delete the project");
+			int id=sc.nextInt();
+			product=productServiceImpl.deleteProductById(id);
+			System.out.println(product);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
+		}
+
 	}
 
 }

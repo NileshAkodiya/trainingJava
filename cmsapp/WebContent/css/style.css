@@ -1,0 +1,39 @@
+.container{
+	background-color: orange;
+	border:1px solid black;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.header{
+	border: 1px solid black;
+	height: 100px;
+}
+#logo{
+	margin-left: 20px;
+	width: 300px;
+	float:left;
+}
+.navigation{
+	margin-left :930px;
+	margin-top: 2px;
+}
+.navigation ul li{
+	display:inline;
+}
+.navigation ul li a{
+	text-decoration:none;
+} 
+lable{
+	
+	background-color: orange;
+}
+.main{
+	border: 1px solid black;
+	height: 400px;
+	margin: 0 auto;
+}
+.footer{
+	border: 1px solid black;
+	height: 50px;
+}

@@ -18,41 +18,53 @@ public class ProductQualityHelper {
 	 *  this method case1()is here to get service of adding product quality in db.
 	 */
 	public void case1() {
-		System.out.print("enter the quality's name");
-		String name=sc.nextLine();
-		System.out.print("enter the quality's description");
-		String description=sc.nextLine();
-		productQuality.setName(name);
-		productQuality.setDescription(description);
-		productQuality=productQualityServiceImpl.addProductQuality(productQuality);
-		System.out.println(productQuality);
+		try {
+			System.out.print("enter the quality's name");
+			String name=sc.nextLine();
+			System.out.print("enter the quality's description");
+			String description=sc.nextLine();
+			productQuality.setName(name);
+			productQuality.setDescription(description);
+			productQuality=productQualityServiceImpl.addProductQuality(productQuality);
+			System.out.println(productQuality);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");;
+		}
 	}
 	/*
 	 *  this method case2()is here to get service of updating product qualities name in db.
 	 */
 	public void case2() {
-		System.out.println("enter product quality Id and new name");
-		int id=sc.nextInt();
-		productQuality.setId(id);
-		sc.nextLine();
-		String name=sc.nextLine();
-		productQuality.setId(id);
-		productQuality.setName(name);
-		productQuality=productQualityServiceImpl.updateProductQualityName(productQuality);
-		System.out.println(productQuality);
+		try {
+			System.out.println("enter product quality Id and new name");
+			int id=sc.nextInt();
+			productQuality.setId(id);
+			sc.nextLine();
+			String name=sc.nextLine();
+			productQuality.setId(id);
+			productQuality.setName(name);
+			productQuality=productQualityServiceImpl.updateProductQualityName(productQuality);
+			System.out.println(productQuality);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
+		}
 	}
 	/*
 	 *  this method case3()is here to get service of updating product qualities description in db.
 	 */
 	public void case3() {
-		System.out.println("enter product quality Id and new description");
-		int id=sc.nextInt();
-		productQuality.setId(id);
-		sc.nextLine();
-		String description=sc.nextLine();
-		productQuality.setDescription(description);
-		productQuality=productQualityServiceImpl.updateProductQualityDescription(productQuality);
-		System.out.println(productQuality);
+		try {
+			System.out.println("enter product quality Id and new description");
+			int id=sc.nextInt();
+			productQuality.setId(id);
+			sc.nextLine();
+			String description=sc.nextLine();
+			productQuality.setDescription(description);
+			productQuality=productQualityServiceImpl.updateProductQualityDescription(productQuality);
+			System.out.println(productQuality);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
+		}
 	}
 	/*
 	 *  this method case4()is here to get service of deleting all product qualities from db.
@@ -64,21 +76,29 @@ public class ProductQualityHelper {
 	 *  this method case6()is here to get service of deleting  a product quality by its Id from db.
 	 */
 	public void case5() {
-		System.out.println("enter product quality Id");
-		int id=sc.nextInt();
-		productQuality.setId(id);
-		productQuality=productQualityServiceImpl.deleteProductQualityById(id);
-		System.out.println(productQuality);
+		try {
+			System.out.println("enter product quality Id");
+			int id=sc.nextInt();
+			productQuality.setId(id);
+			productQuality=productQualityServiceImpl.deleteProductQualityById(id);
+			System.out.println(productQuality);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
+		}
 	}
 	/*
 	 *  this method case6()is here to get service of deleting  a product quality by its name from db.
 	 */
 	public void case6() {
-		System.out.println("enter product quality name");
-		String name=sc.nextLine();
-		productQuality.setName(name);
-		productQuality=productQualityServiceImpl.deleteProductQualityByName(name);
-		System.out.println(productQuality);
+		try {
+			System.out.println("enter product quality name");
+			String name=sc.nextLine();
+			productQuality.setName(name);
+			productQuality=productQualityServiceImpl.deleteProductQualityByName(name);
+			System.out.println(productQuality);
+		} catch (Exception e) {
+			System.out.println("Invalid input entered!!!");
+		}
 	}
 
 }

@@ -115,8 +115,8 @@ public class ProductDAOImplTest {
 	 */
 	@Test
 	public void test_UpdateProductPrice_GivenIdAsNumberAndPriceAsnumber_ShouldReturnProjectObjects() throws NoPriceGivenException  {
-		int id=83;
-		int price=25000;
+		int id=91;
+		double price=25000;
 		Product product=new Product();
 		product=productDAOImpl.updateProductPrice(id, price);
 		assertNotNull(product);
@@ -128,7 +128,7 @@ public class ProductDAOImplTest {
 	 */
 	@Test
 	public void test_UpdateProductDescription_GivenIdAsNumberAndDescriptionAsString_ShouldReturnProjectObjects() throws NoPriceGivenException  {
-		int id=83;
+		int id=91;
 		String desc="New description";
 		Product product=new Product();
 		product=productDAOImpl.updateProductDescription(id, desc);
@@ -140,7 +140,7 @@ public class ProductDAOImplTest {
 	 */
 	@Test
 	public void test_DeleteProductById_GivenIdAsNumber_ShouldReturnProjectObjects() throws NoPriceGivenException  {
-		int id=83;
+		int id=92;
 		Product product=new Product();
 		product=productDAOImpl.deleteProductById(id);
 		assertNotNull(product);
@@ -149,10 +149,10 @@ public class ProductDAOImplTest {
 	/*
 	 * test for deleteProduct() method.
 	 */
-	@Test
+	/*@Test
 	public void test_DeleteAllProducts_ShouldReturnString() throws NoPriceGivenException  {
 		String message=productDAOImpl.deleteProduct();
 		assertEquals("All products have been deleted.",message);
-	}
+	}*/
 
 }

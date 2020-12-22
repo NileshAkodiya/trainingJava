@@ -31,7 +31,7 @@ public interface ProductDAO {
 	/*
 	 * this updateProductPrice() method is used for updating product's price into table products
 	 */
-	public Product updateProductPrice(int id,int price) throws NoPriceGivenException;
+	public Product updateProductPrice(int id,double price) throws NoPriceGivenException;
 
 
 	/*

@@ -14,8 +14,8 @@ public class ProductServiceSelector {
 	public void selector() throws NoProductNameGivenException, NoProductDescriptionGivenException, NoPriceGivenException {
 		System.out.println("On which service Do u want to work on? enter\n1 to add product\n2 to see all Products\n 3 to see a perticular product with id.\n4 to update price of product\n5 to update description of product\n6 to delete all products\n7 to delete a specific product.");
 		Scanner sc=new Scanner(System.in);
+		try {
 		int serviceNo=sc.nextInt();
-	
 		switch(serviceNo) {
 		case 1:
 			productHelper.case1();
@@ -42,6 +42,9 @@ public class ProductServiceSelector {
 		default:
 			System.out.println("Enter correct service no.");
 			selector();
+		}
+		}catch(Exception e) {
+			System.out.println("Invalid Input.");
 		}
 		
 	}

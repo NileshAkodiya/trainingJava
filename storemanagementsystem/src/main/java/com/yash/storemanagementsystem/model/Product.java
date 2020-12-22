@@ -22,24 +22,22 @@ public class Product {
 	/*
 	 *  Product's Price
 	 */
-	private int price;
+	private double price;
 	
 	/*
 	 * Product description
 	 */
-	String description;
+	private String description;
 	
 	/*
 	 * default constructor for creating instance only.
 	 */
 	public Product() {
 	}
-	
-	
 	/*
 	 * Construct for instantiation of Product object with all fields;
 	 */
-	public Product(int id, int productCustomerId, String name, int price, String description) {
+	public Product(int id, int productCustomerId, String name, double price, String description) {
 		this.id = id;
 		this.productCustomerId = productCustomerId;
 		this.name = name;
@@ -50,7 +48,7 @@ public class Product {
 	/*
 	 * Construct for instantiation of Product object with two fields(id,price);
 	 */
-	public Product(int id, int price) {
+	public Product(int id, double price) {
 		super();
 		this.id = id;
 		this.price = price;
@@ -96,14 +94,14 @@ public class Product {
 	/*
 	 * getter method for getting product price
 	 */
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	
 	/*
 	 * setter method for setting product price
 	 */
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	

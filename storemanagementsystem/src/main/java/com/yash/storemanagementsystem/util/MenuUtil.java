@@ -1,5 +1,6 @@
 package com.yash.storemanagementsystem.util;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.yash.storemanagementsystem.exception.NoPriceGivenException;
@@ -25,15 +26,30 @@ public class MenuUtil {
 			if(module==1) {
 				new ProductServiceSelector().selector();
 			}
-			if(module==2) {
+			else if(module==2) {
 				new ProductQualityServiceSelector().selector();
 
 			}
-			System.out.println("Do u want to continue? enter\n 1 for yes \n2 for no.");
-			if(sc.nextInt()==1)
-				start();
-		}catch(Exception e) {
-			System.out.println(e.getMessage());
+			else {
+				System.out.println("No module available for given number!!!");
+				System.out.println("Do u want to continue? enter\n 1 for yes \n2 for no.");
+				if(sc.nextInt()==1) {
+					start();
+				}
+				else {
+					System.out.println("Thanks for using.");
+					System.exit(0);
+				}
+			}
+			
+				System.out.println("Do u want to continue? enter\n 1 for yes \n2 for no.");
+				if(sc.nextInt()==1)
+					start();
+				else {
+					System.out.println("Thanks for using.");
+				}
+		}catch(InputMismatchException e) {
+			System.out.println("Entered Invalid Input!!!");
 		}
 	}
 

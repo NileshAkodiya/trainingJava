@@ -2,6 +2,8 @@ package com.yash.storemanagementsystem.serviceimpl;
 
 import com.yash.storemanagementsystem.dao.ProductQualityDAO;
 import com.yash.storemanagementsystem.daoimpl.ProductQualityDAOImpl;
+import com.yash.storemanagementsystem.exception.NoProductDescriptionGivenException;
+import com.yash.storemanagementsystem.exception.NoProductNameGivenException;
 import com.yash.storemanagementsystem.model.ProductQuality;
 import com.yash.storemanagementsystem.service.ProductQualityService;
 /*
@@ -18,7 +20,7 @@ public class ProductQualityServiceImpl implements ProductQualityService{
 	 * it is the implementation of method addProductQuality() of  ProductQualityService interface
 	 */
 	@Override
-	public ProductQuality addProductQuality(ProductQuality productQuality) {
+	public ProductQuality addProductQuality(ProductQuality productQuality) throws NoProductNameGivenException, NoProductDescriptionGivenException {
 		return productQualityDAO.save(productQuality);
 	}
 

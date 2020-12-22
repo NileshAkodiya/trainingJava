@@ -49,7 +49,7 @@ public class ProductServiceImpl implements ProductService{
 	 * it is the implementation of method updateProductPrice() of  ProductService interface
 	 */
 	@Override
-	public Product updateProductPrice(int id, int price) throws NoPriceGivenException {
+	public Product updateProductPrice(int id, double price) throws NoPriceGivenException {
 		return productDAO.updateProductPrice(id,price);
 	}
 

@@ -12,7 +12,7 @@ public class JDBCUtil {
 	private Connection connection=null;
 	PreparedStatement  preparedStatement=null;
 	/*
-	 * this connect() method is here to creat connection object.
+	 * this connect() method is here to create connection object.
 	 */
 	private Connection connect() {
 

@@ -10,6 +10,7 @@ public class ProductQualityServiceSelector {
 
 		System.out.println("On which service Do u want to work on? enter\n1 to add productQuality\n2 to update name of productQuality\n3 to update description of productQuality\n4 to delete all productQualities\n5 to delete a specific product Quality by Id.\n6  to delete a specific product Quality by name.");
 		Scanner sc=new Scanner(System.in);
+		try {
 		int serviceNo=sc.nextInt();
 		switch(serviceNo) {
 		case 1:
@@ -35,6 +36,8 @@ public class ProductQualityServiceSelector {
 			System.out.println("Enter correct service no.");
 			selector();
 		}
-		
+		}catch(Exception e) {
+			System.out.println("Invalid Input.");
+		}
 	}
 }

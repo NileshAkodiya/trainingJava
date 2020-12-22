@@ -33,7 +33,7 @@ public interface ProductService {
 	 * This method updateProductPrice() calls the method presents in ProductDAO to update a product's 
 	 * price by taking id and new price.
 	 */ 
-	public Product  updateProductPrice	(int id, int price) throws NoPriceGivenException;
+	public Product  updateProductPrice	(int id, double price) throws NoPriceGivenException;
 	
 
 	/*

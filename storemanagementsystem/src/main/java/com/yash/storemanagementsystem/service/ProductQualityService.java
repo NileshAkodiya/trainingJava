@@ -1,5 +1,7 @@
 package com.yash.storemanagementsystem.service;
 
+import com.yash.storemanagementsystem.exception.NoProductDescriptionGivenException;
+import com.yash.storemanagementsystem.exception.NoProductNameGivenException;
 import com.yash.storemanagementsystem.model.ProductQuality;
 /*
  * this layer is working as bridge between presentation layer(MenuUtil) and domain layer(ProductQualityDAO)
@@ -11,7 +13,7 @@ public interface ProductQualityService {
 	 * This method addProductQuality() calls the method presents in ProductQualityDAO to add a product
 	 * quality in database and return the same.
 	 */
-	public ProductQuality addProductQuality(ProductQuality productQuality);
+	public ProductQuality addProductQuality(ProductQuality productQuality) throws NoProductNameGivenException, NoProductDescriptionGivenException;
 	
 	/*
 	 * This method updateProductQualityName() calls the method presents in ProductQualityDAO to update a  

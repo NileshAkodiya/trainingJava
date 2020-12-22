@@ -40,7 +40,7 @@ public class ProductDAOImpl implements ProductDAO{
 				PreparedStatement preparedStatement=jdbcUtil.getPrepareStatement(query);
 				preparedStatement.setInt(1, product.getProductCustomerId());
 				preparedStatement.setString(2, product.getName());
-				preparedStatement.setInt(3, product.getPrice());
+				preparedStatement.setDouble(3, product.getPrice());
 				preparedStatement.setString(4, product.getDescription());
 				int i=preparedStatement.executeUpdate();
 				if(i!=0) {
@@ -52,7 +52,7 @@ public class ProductDAOImpl implements ProductDAO{
 						productTemp.setId(rs.getInt(1));
 						productTemp.setProductCustomerId(rs.getInt(2));
 						productTemp.setName(rs.getString(3));
-						productTemp.setPrice(rs.getInt(4));
+						productTemp.setPrice(rs.getDouble(4));
 						productTemp.setDescription(rs.getString(5));
 					}
 				}
@@ -81,7 +81,7 @@ public class ProductDAOImpl implements ProductDAO{
 				productTemp.setId(rs.getInt(1));
 				productTemp.setProductCustomerId(rs.getInt(2));
 				productTemp.setName(rs.getString(3));
-				productTemp.setPrice(rs.getInt(4));
+				productTemp.setPrice(rs.getDouble(4));
 				productTemp.setDescription(rs.getString(5));
 				list.add(productTemp);
 			}
@@ -113,7 +113,7 @@ public class ProductDAOImpl implements ProductDAO{
 				productTemp.setId(rs.getInt(1));
 				productTemp.setProductCustomerId(rs.getInt(2));
 				productTemp.setName(rs.getString(3));
-				productTemp.setPrice(rs.getInt(4));
+				productTemp.setPrice(rs.getDouble(4));
 				productTemp.setDescription(rs.getString(5));
 				list.add(productTemp);
 			}
@@ -128,7 +128,7 @@ public class ProductDAOImpl implements ProductDAO{
 	 * it is the implementation of method updateProductPrice() of  ProductDAO interface
 	 */
 	@Override
-	public Product updateProductPrice(int id, int price) throws NoPriceGivenException {
+	public Product updateProductPrice(int id, double price) throws NoPriceGivenException {
 
 
 		Product product=new Product();
@@ -138,7 +138,7 @@ public class ProductDAOImpl implements ProductDAO{
 		try {
 			String query="update products set price=? where id=?";
 			PreparedStatement preparedStatement=jdbcUtil.getPrepareStatement(query);
-			preparedStatement.setInt(1, price);
+			preparedStatement.setDouble(1, price);
 			preparedStatement.setInt(2, id);
 			int i=preparedStatement.executeUpdate();
 			if(i!=0) {
@@ -152,7 +152,7 @@ public class ProductDAOImpl implements ProductDAO{
 					product.setId(rs.getInt(1));
 					product.setProductCustomerId(rs.getInt(2));
 					product.setName(rs.getString(3));
-					product.setPrice(rs.getInt(4));
+					product.setPrice(rs.getDouble(4));
 					product.setDescription(rs.getString(5));
 
 				}
@@ -194,7 +194,7 @@ public class ProductDAOImpl implements ProductDAO{
 					product.setId(rs.getInt(1));
 					product.setProductCustomerId(rs.getInt(2));
 					product.setName(rs.getString(3));
-					product.setPrice(rs.getInt(4));
+					product.setPrice(rs.getDouble(4));
 					product.setDescription(rs.getString(5));
 
 				}
@@ -252,7 +252,7 @@ public class ProductDAOImpl implements ProductDAO{
 				product.setId(rs.getInt(1));
 				product.setProductCustomerId(rs.getInt(2));
 				product.setName(rs.getString(3));
-				product.setPrice(rs.getInt(4));
+				product.setPrice(rs.getDouble(4));
 				product.setDescription(rs.getString(5));
 			}
 			query="delete from products where id=?";

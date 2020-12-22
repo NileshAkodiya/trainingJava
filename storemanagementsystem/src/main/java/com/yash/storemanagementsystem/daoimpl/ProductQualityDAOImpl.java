@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.yash.storemanagementsystem.dao.ProductQualityDAO;
+import com.yash.storemanagementsystem.exception.NoProductDescriptionGivenException;
+import com.yash.storemanagementsystem.exception.NoProductNameGivenException;
 import com.yash.storemanagementsystem.model.Product;
 import com.yash.storemanagementsystem.model.ProductQuality;
 import com.yash.storemanagementsystem.util.JDBCUtil;
@@ -19,7 +21,11 @@ public class ProductQualityDAOImpl implements ProductQualityDAO{
 	 */
 
 	@Override
-	public ProductQuality save(ProductQuality productQuality) {
+	public ProductQuality save(ProductQuality productQuality) throws NoProductNameGivenException, NoProductDescriptionGivenException {
+		if(productQuality.getName().equals(""))
+			throw new NoProductNameGivenException("Enter the product quality name.");
+		if(productQuality.getDescription().equals(""))
+			throw new NoProductDescriptionGivenException("Enter the product quality description.");
 		try {
 			String query="insert into product_qualities (name,description) values(?,?)";
 			PreparedStatement preparedStatement=jdbcUtil.getPrepareStatement(query);

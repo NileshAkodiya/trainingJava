@@ -1,4 +1,6 @@
 package com.yash.storemanagementsystem.dao;
+import com.yash.storemanagementsystem.exception.NoProductDescriptionGivenException;
+import com.yash.storemanagementsystem.exception.NoProductNameGivenException;
 import com.yash.storemanagementsystem.model.ProductQuality;
 /*
  *this is the main domain layer where the business logic has been written
@@ -9,7 +11,7 @@ public interface ProductQualityDAO {
 	/*
 	 * this save method is used for inserting product quality into table product_qualities
 	 */
-	public ProductQuality save(ProductQuality productQuality);
+	public ProductQuality save(ProductQuality productQuality) throws NoProductNameGivenException, NoProductDescriptionGivenException;
 	
 
 	/*
